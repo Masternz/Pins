@@ -1,0 +1,9 @@
+/Users/dale/Documents/Projects/Pins/Pins.Lib/bin/Debug/netstandard2.0/Pins.Lib.deps.json
+/Users/dale/Documents/Projects/Pins/Pins.Lib/bin/Debug/netstandard2.0/Pins.Lib.dll
+/Users/dale/Documents/Projects/Pins/Pins.Lib/bin/Debug/netstandard2.0/Pins.Lib.pdb
+/Users/dale/Documents/Projects/Pins/Pins.Lib/obj/Debug/netstandard2.0/Pins.Lib.csproj.CoreCompileInputs.cache
+/Users/dale/Documents/Projects/Pins/Pins.Lib/obj/Debug/netstandard2.0/Pins.Lib.AssemblyInfoInputs.cache
+/Users/dale/Documents/Projects/Pins/Pins.Lib/obj/Debug/netstandard2.0/Pins.Lib.AssemblyInfo.cs
+/Users/dale/Documents/Projects/Pins/Pins.Lib/obj/Debug/netstandard2.0/Pins.Lib.dll
+/Users/dale/Documents/Projects/Pins/Pins.Lib/obj/Debug/netstandard2.0/Pins.Lib.pdb
+/Users/dale/Documents/Projects/Pins/Pins.Lib/obj/Debug/netstandard2.0/Pins.Lib.csprojAssemblyReference.cache

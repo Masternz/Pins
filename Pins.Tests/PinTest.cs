@@ -6,6 +6,7 @@ namespace Pins.Tests
 {
     public class PinTests
     {
+        // a comment
         ITestOutputHelper output;
          public PinTests(ITestOutputHelper output)
         {
