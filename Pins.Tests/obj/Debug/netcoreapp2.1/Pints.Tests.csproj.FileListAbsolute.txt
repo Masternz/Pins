@@ -1,0 +1,14 @@
+/Users/dale/Documents/Projects/Pins/Pints.Tests/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/dale/Documents/Projects/Pins/Pints.Tests/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/dale/Documents/Projects/Pins/Pints.Tests/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/dale/Documents/Projects/Pins/Pints.Tests/bin/Debug/netcoreapp2.1/Pints.Tests.deps.json
+/Users/dale/Documents/Projects/Pins/Pints.Tests/bin/Debug/netcoreapp2.1/Pints.Tests.runtimeconfig.json
+/Users/dale/Documents/Projects/Pins/Pints.Tests/bin/Debug/netcoreapp2.1/Pints.Tests.runtimeconfig.dev.json
+/Users/dale/Documents/Projects/Pins/Pints.Tests/bin/Debug/netcoreapp2.1/Pints.Tests.dll
+/Users/dale/Documents/Projects/Pins/Pints.Tests/bin/Debug/netcoreapp2.1/Pints.Tests.pdb
+/Users/dale/Documents/Projects/Pins/Pints.Tests/obj/Debug/netcoreapp2.1/Pints.Tests.csprojAssemblyReference.cache
+/Users/dale/Documents/Projects/Pins/Pints.Tests/obj/Debug/netcoreapp2.1/Pints.Tests.csproj.CoreCompileInputs.cache
+/Users/dale/Documents/Projects/Pins/Pints.Tests/obj/Debug/netcoreapp2.1/Pints.Tests.AssemblyInfoInputs.cache
+/Users/dale/Documents/Projects/Pins/Pints.Tests/obj/Debug/netcoreapp2.1/Pints.Tests.AssemblyInfo.cs
+/Users/dale/Documents/Projects/Pins/Pints.Tests/obj/Debug/netcoreapp2.1/Pints.Tests.dll
+/Users/dale/Documents/Projects/Pins/Pints.Tests/obj/Debug/netcoreapp2.1/Pints.Tests.pdb
