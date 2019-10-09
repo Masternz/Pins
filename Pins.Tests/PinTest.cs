@@ -39,7 +39,7 @@ namespace Pins.Tests
         
         [Fact]
         //[ExpectedException(typeof(NotImplementedException))]
-        public void PinTestWithException()
+        public void GenerateBatch_WithCorrectCountAndPinWith_CorrectBatchZizeAndLenght()
         {
             const int width = 4;
             const int batchSize = 100;
@@ -47,13 +47,7 @@ namespace Pins.Tests
             
             Pins.Lib.IPinsLibrary lib = new Pins.Lib.PinsLibrary();
             var x = lib.GenerateBatch(batchSize, width);
-            //Assert.Throws<NotImplementedException>(() => lib.GenerateBatch(4, 100));
-            
-            output.WriteLine("In this test");
-            
-            output.WriteLine(System.Convert.ToString(x.Count));
 
-            Console.WriteLine("COUNT :: " + x.Count.ToString());
 
             Assert.True(x.Count == batchSize);
             foreach(string pin in x)
