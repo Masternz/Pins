@@ -45,5 +45,16 @@ namespace Pins.Lib
             return coll;
 
         }
+
+        /// Returns true if all imput parameter combinations are valid
+        bool ValidateInputParameters(int batchSize, int pinLenght)
+        {
+            return true;
+        }
+
+        int GetRandomInputSizeBasedOnPinLength(int pinLength)
+        {
+            return 9999;
+        }
     }
 }
