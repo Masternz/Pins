@@ -9,8 +9,13 @@ namespace Pins.Lib
         HashSet<string> GenerateBatch(int width, int batchSize);
     }
 
+    public interface IPinsValidation
+    {
+       bool ValidateInputParameters(int batchSize, int pinLenght);
+        int GetRandomInputSizeBasedOnPinLength(int pinLength);
+    }
 
-    public class PinsLibrary:IPinsLibrary
+    public class PinsLibrary:IPinsLibrary,IPinsValidation
     {
         public PinsLibrary()
         {
@@ -27,34 +32,50 @@ namespace Pins.Lib
             // Could be a problem here if the width is not large enough for the
             // batchSize.
             // hardcoded for now
-            var max = 9999;
+            var max = GetRandomInputSizeBasedOnPinLength(width);
 
             int index = 1;
-            while(index <= batchSize)
+            int failureCount = 0;
+            // Need more exit criteria to eliminate chance of an infinite loop
+            // default we cannot have a failurecount more than the batch size.
+            // Could add something more suffisticated around failure count.
+            // especially if we add more validation criteria.
+            while(index <= batchSize && failureCount <= batchSize)
             {
                 int pin = rdm.Next(1, max);
 
                 string strPin = pin.ToString("D" + width);
 
+                // validation - elimination
+
                 if(coll.Add(strPin))
                 {
                     ++index;
                 }
+                //else
+                //{
+                //    ++failureCount;
+                //}
+
             }
+
+            // if batch size is incorrect throw an exception.
             
             return coll;
 
         }
 
         /// Returns true if all imput parameter combinations are valid
-        bool ValidateInputParameters(int batchSize, int pinLenght)
+        public bool ValidateInputParameters(int batchSize, int pinLenght)
         {
             return true;
         }
 
-        int GetRandomInputSizeBasedOnPinLength(int pinLength)
+        public int GetRandomInputSizeBasedOnPinLength(int pinLength)
         {
-            return 9999;
+            int pinMax = System.Convert.ToInt32(new String('9', pinLength));   
+        
+            return pinMax;
         }
     }
 }
