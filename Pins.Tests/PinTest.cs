@@ -86,6 +86,20 @@ namespace Pins.Tests
             Assert.Equal(expectedResult, result);
         }
 
+                [Theory,
+            InlineData(1, 9),
+            InlineData(2, 99),
+            InlineData(3, 999),
+            InlineData(4, 9999)
+        ]
+        public void ValidateTheValidationClass(int pin, bool expectedResult)
+        {
+
+            
+
+            Assert.Equal(expectedResult, expectedResult);
+        }
+
 
 
 
