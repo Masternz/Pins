@@ -53,8 +53,9 @@ namespace Pins.Tests
             const int width = 4;
             const int batchSize = 1000;
             
-            
-            Pins.Lib.IPinsLibrary lib = new Pins.Lib.PinsLibrary();
+            IValidation val = new Validation();
+
+            IPinsLibrary lib = new PinsLibrary(val);
 
             var x = lib.GenerateBatch(batchSize, width);
 
@@ -75,8 +76,11 @@ namespace Pins.Tests
         ]
         public void ValidateThatPinLenghtCreatesTheCorrectRandomSize(int pinLength, int expectedResult)
         {
+
+            IValidation val = new Validation();
+
             // Assemble
-            IPinsValidation iValidation = new PinsLibrary();
+            IPinsValidation iValidation = new PinsLibrary(val);
             // Execute
 
             var result = iValidation.GetRandomInputSizeBasedOnPinLength(pinLength);
@@ -85,8 +89,8 @@ namespace Pins.Tests
 
             Assert.Equal(expectedResult, result);
         }
-
-                [Theory,
+/* 
+            [Theory,
             InlineData(1, 9),
             InlineData(2, 99),
             InlineData(3, 999),
@@ -99,7 +103,7 @@ namespace Pins.Tests
 
             Assert.Equal(expectedResult, expectedResult);
         }
-
+*/
 
 
 

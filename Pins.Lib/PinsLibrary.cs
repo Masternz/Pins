@@ -7,6 +7,7 @@ namespace Pins.Lib
     public interface IPinsLibrary
     {
         HashSet<string> GenerateBatch(int width, int batchSize);
+        IValidation Validation { get;}
     }
 
     public interface IPinsValidation
@@ -17,10 +18,22 @@ namespace Pins.Lib
 
     public class PinsLibrary:IPinsLibrary,IPinsValidation
     {
-        public PinsLibrary()
+        
+        IValidation _validation;
+
+        private PinsLibrary(){}
+        
+        public PinsLibrary(IValidation validation)
         {
+            _validation = validation;
         }
 
+
+        public IValidation Validation
+        {
+            get { return _validation; }
+        }
+        
         // a comment
 
         public HashSet<string> GenerateBatch(int batchSize, int width)
