@@ -49,6 +49,7 @@ namespace Pins.Lib
 
             int index = 1;
             int failureCount = 0;
+            const int maxFailureCount = 20;
             // Need more exit criteria to eliminate chance of an infinite loop
             // default we cannot have a failurecount more than the batch size.
             // Could add something more suffisticated around failure count.
@@ -60,15 +61,24 @@ namespace Pins.Lib
                 string strPin = pin.ToString("D" + width);
 
                 // validation - elimination
+                bool valid = true;
 
-                if(coll.Add(strPin))
+                foreach(IValidator validator in this._validation.Validators)
+                {
+                    valid = validator.Validate(strPin);
+                    if(!valid)
+                        break;
+                }
+
+                if(valid && coll.Add(strPin))
                 {
                     ++index;
                 }
-                //else
-                //{
-                //    ++failureCount;
-                //}
+                else
+                {
+                    ++failureCount;
+                    System.Diagnostics.Trace.WriteLine($"Got a failure while creating or adding the PIN :: {strPin} failure count :: {failureCount}");
+                }
 
             }
 

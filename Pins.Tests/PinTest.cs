@@ -57,6 +57,8 @@ namespace Pins.Tests
 
             IPinsLibrary lib = new PinsLibrary(val);
 
+            lib.Validation.Add(new ValidateConsecutive());
+
             var x = lib.GenerateBatch(batchSize, width);
 
 
@@ -89,21 +91,30 @@ namespace Pins.Tests
 
             Assert.Equal(expectedResult, result);
         }
-/* 
-            [Theory,
-            InlineData(1, 9),
-            InlineData(2, 99),
-            InlineData(3, 999),
-            InlineData(4, 9999)
-        ]
-        public void ValidateTheValidationClass(int pin, bool expectedResult)
+
+
+        [Fact]
+        public void ValidateTheValidationClass()
         {
-
+            const int expectedValue = 1;
             
+            IValidation val = new Validation();
 
-            Assert.Equal(expectedResult, expectedResult);
+            IPinsLibrary lib = new PinsLibrary(val);
+
+            IValidator validation = new ValidateConsecutive();
+            
+            // Add a validator
+            lib.Validation.Add(validation);
+
+            // get the validation object back and do a count on it.
+
+            int validatorCount = lib.Validation.Validators.Count;
+            // we should have a validator count of 1
+            Assert.Equal(validatorCount, expectedValue);
+
         }
-*/
+
 
 
 
