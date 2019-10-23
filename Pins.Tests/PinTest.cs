@@ -90,6 +90,7 @@ namespace Pins.Tests
             // Assert
 
             Assert.Equal(expectedResult, result);
+            // do some more stuff
         }
 
 
