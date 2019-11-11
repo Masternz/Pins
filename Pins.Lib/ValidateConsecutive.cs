@@ -3,22 +3,19 @@ using System;
 namespace Pins.Lib
 {
 
-    public class ValidateConsecutive : IValidator
+    public class ValidateSequential : IValidator
     {
         public bool Validate(string pin)
         {
             bool result = true;
 
-            if(pin.Length == 0)
-                return false;
+            if(pin.Length < 3)
+                return true;
 
-            char previous = pin[0];
-            for (int i = 1; i < pin.Length; ++i)
+            for (int i = 0; i < pin.Length - 2; ++i)
             {
-                if(previous == pin[i])
+                if(pin[i]+1 == pin[i+1] && pin[i]+2 == pin[i+2])
                     return false;
-                else
-                    previous = pin[i];
             }
             
             return result;

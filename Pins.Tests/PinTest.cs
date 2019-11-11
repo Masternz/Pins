@@ -45,6 +45,25 @@ namespace Pins.Tests
 
             Assert.True(result == expectedResult);
         }
+
+        [Theory,
+            InlineData("0123", false),
+            InlineData("1357", true),
+            InlineData("123", false),
+            InlineData("4569", false),
+            InlineData("12457", true),
+            InlineData("8345", false),
+            InlineData("13", true)
+        ]
+        public void Validate_SequentialNumbers(string pin, bool expectedResult)
+        {
+            Pins.Lib.IValidator validator = new Pins.Lib.ValidateSequential();
+            var result = validator.Validate(pin);
+
+            Assert.True(result == expectedResult);
+        }
+
+
         
         [Fact]
         //[ExpectedException(typeof(NotImplementedException))]
@@ -58,6 +77,7 @@ namespace Pins.Tests
             IPinsLibrary lib = new PinsLibrary(val);
 
             lib.Validation.Add(new ValidateConsecutive());
+            lib.Validation.Add(new ValidateSequential());
 
             var x = lib.GenerateBatch(batchSize, width);
 
